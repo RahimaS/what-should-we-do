@@ -135,3 +135,79 @@ h2{font-size:clamp(18px,3.2vw,27px);line-height:1.12;letter-spacing:-.045em;marg
  .sheet-content{left:17%;right:10%}
  .choices button{font-size:5.5px}
 }
+
+
+/* ===== V3: paper safe-area / padding fixes ===== */
+
+/* Filters: keep controls comfortably inside the torn paper edges */
+#filters{
+  padding: 18px 22px 20px 28px;
+}
+#filters .micro:first-child{
+  margin-top: 4px;
+}
+
+/* Saved Ideas: all content begins to the right of the punched holes / red rule */
+.list-sheet{
+  padding-top: 82px;
+  padding-right: clamp(54px, 8vw, 90px);
+  padding-bottom: 82px;
+  padding-left: clamp(112px, 15vw, 142px);
+}
+.list-sheet > .micro{
+  margin-bottom: 13px;
+}
+.list-sheet h1{
+  font-size: clamp(31px, 5vw, 48px);
+  line-height: 1.05;
+  margin-bottom: 22px;
+}
+.list-sheet .tabs,
+.list-sheet #savedList,
+.list-sheet .back-home{
+  width: 100%;
+}
+.saved-row{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* iPad / tablet */
+@media (max-width: 800px){
+  #filters{
+    padding: 16px 18px 18px 22px;
+  }
+  .list-sheet{
+    padding-top: 72px;
+    padding-right: 64px;
+    padding-bottom: 72px;
+    padding-left: 118px;
+  }
+}
+
+/* Phone */
+@media (max-width: 600px){
+  #filters{
+    padding: 12px 12px 14px 16px;
+  }
+  .list-sheet{
+    padding-top: 58px;
+    padding-right: 44px;
+    padding-bottom: 60px;
+    padding-left: 82px;
+  }
+  .list-sheet h1{
+    font-size: clamp(27px, 8vw, 38px);
+    margin-bottom: 16px;
+  }
+}
+
+/* Very narrow phones */
+@media (max-width: 420px){
+  .list-sheet{
+    padding-top: 52px;
+    padding-right: 38px;
+    padding-bottom: 56px;
+    padding-left: 74px;
+  }
+}

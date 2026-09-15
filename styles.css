@@ -211,3 +211,49 @@ h2{font-size:clamp(18px,3.2vw,27px);line-height:1.12;letter-spacing:-.045em;marg
     padding-left: 74px;
   }
 }
+
+
+/* ===== V4: black welcome screen + dice artwork ===== */
+#home {
+  color: #191512;
+}
+
+#home h1,
+#home .micro,
+#home .tagline p {
+  color: #191512;
+}
+
+#home .tagline span {
+  background: #191512;
+}
+
+/* Burgundy remains the single accent on the welcome screen */
+#home .primary {
+  background: #8c1823;
+  color: #fff8ee;
+}
+
+/* Dice image replacing the previous bow */
+.dice-icon {
+  display: block;
+  width: 90px;
+  max-width: 20%;
+  height: auto;
+  margin: 4px auto 25px;
+  object-fit: contain;
+}
+
+/* Hide any legacy CSS bow if present */
+.bow,
+.bow::before,
+.bow::after {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  .dice-icon {
+    width: 76px;
+    margin-bottom: 18px;
+  }
+}

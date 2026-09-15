@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#536b25">
+  <title>What Should We Do?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <button id="ourListTop">OUR LIST</button>
+  <button id="homeTop" class="heart" aria-label="Home">♡</button>
+</header>
+
+<main>
+<section id="picker" class="page active">
+  <div class="sheet">
+    <img class="note-paper" src="assets/note-paper.png" alt="">
+    <div class="sheet-content">
+      <div id="home">
+        <p class="micro">DATE DAY ROULETTE</p>
+        <h1>What should<br>we do?</h1>
+        <div class="bow">୨୧</div>
+        <button class="primary" id="startBtn">CHOOSE FOR US <b>→</b></button>
+        <div class="tagline"><span></span><p>little plans<br>happier days</p><span></span></div>
+      </div>
+
+      <div id="filters" class="hidden">
+        <p class="micro">STEP 1 OF 3</p>
+        <h2>WHAT'S THE VIBE TODAY?</h2>
+        <div class="choices" id="vibeChoices">
+          <button data-value="surprise" class="selected">SURPRISE ME</button>
+          <button data-value="cozy">COZY</button><button data-value="fun">FUN</button>
+          <button data-value="creative">CREATIVE</button><button data-value="cultured">CULTURED</button>
+          <button data-value="outdoors">OUTDOORS</button>
+        </div>
+        <hr><p class="micro">STEP 2 OF 3</p><h2>HOW MUCH EFFORT?</h2>
+        <div class="choices three" id="effortChoices">
+          <button data-value="low">JUST GET US<br>OUT THE HOUSE</button>
+          <button data-value="couple" class="selected">A COUPLE<br>OF HOURS</button>
+          <button data-value="day">MAKE A DAY<br>OF IT</button>
+        </div>
+        <hr><p class="micro">STEP 3 OF 3</p><h2>BUDGET?</h2>
+        <div class="choices four" id="budgetChoices">
+          <button data-value="0">FREE</button><button data-value="1">£</button>
+          <button data-value="2" class="selected">££</button><button data-value="3">DON'T CARE</button>
+        </div>
+        <button class="primary" id="findBtn">FIND OUR PLAN <b>→</b></button>
+      </div>
+
+      <div id="result" class="hidden">
+        <p class="micro">TODAY'S PLAN</p>
+        <h2 id="resultTitle"></h2>
+        <div class="result-card">
+          <p class="place" id="resultPlace"></p><p id="resultArea"></p>
+          <div class="meta" id="resultMeta"></div>
+          <div class="tags" id="resultTags"></div>
+        </div>
+        <button class="primary" id="doBtn">LET'S DO IT <b>→</b></button>
+        <p class="not-feeling">Not feeling it?</p>
+        <div class="result-actions"><button id="againBtn">PICK AGAIN</button><button id="saveBtn">♡ SAVE</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="list" class="page">
+  <div class="list-sheet">
+    <p class="micro">OUR LIST</p><h1>Saved ideas</h1>
+    <div class="tabs"><button class="active" data-tab="all">ALL</button><button data-tab="todo">TO DO</button><button data-tab="done">DONE</button></div>
+    <div id="savedList"></div>
+    <button class="primary back-home">BACK TO ROULETTE <b>→</b></button>
+  </div>
+</section>
+</main>
+<script src="script.js"></script>
+</body></html>

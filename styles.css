@@ -333,3 +333,147 @@ h2{font-size:clamp(18px,3.2vw,27px);line-height:1.12;letter-spacing:-.045em;marg
     margin: 4px auto 20px;
   }
 }
+
+
+/* ===== V6: iPhone layout fix =====
+   On narrow screens the questionnaire needs a taller paper than the home card.
+   Safari supports :has(), so only the active filters/result view gets the taller sheet. */
+@media (max-width: 600px) {
+
+  #picker {
+    min-height: 100svh;
+    padding: 78px 10px 28px;
+    place-items: center;
+  }
+
+  /* Keep the normal welcome card proportions */
+  .sheet {
+    width: min(96vw, 520px);
+  }
+
+  /* Give the questionnaire enough vertical room instead of clipping it */
+  .sheet:has(#filters:not(.hidden)) {
+    width: min(96vw, 520px);
+    height: min(76svh, 650px);
+    min-height: 570px;
+    aspect-ratio: auto;
+  }
+
+  /* Same protection for a longer result */
+  .sheet:has(#result:not(.hidden)) {
+    width: min(96vw, 520px);
+    height: min(72svh, 610px);
+    min-height: 530px;
+    aspect-ratio: auto;
+  }
+
+  /* Stretch only the paper texture to the taller mobile card */
+  .sheet:has(#filters:not(.hidden)) .note-paper,
+  .sheet:has(#result:not(.hidden)) .note-paper {
+    object-fit: fill;
+  }
+
+  /* Safe area inside the punched-hole notebook paper */
+  .sheet-content {
+    left: 17%;
+    right: 8%;
+    top: 13%;
+    bottom: 12%;
+    overflow: visible;
+  }
+
+  #filters {
+    width: 100%;
+    padding: 10px 8px 12px 10px;
+  }
+
+  #filters .micro {
+    margin-bottom: 7px;
+    font-size: 6.5px;
+  }
+
+  #filters h2 {
+    font-size: 17px;
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+
+  #filters hr {
+    margin: 10px 0;
+  }
+
+  .choices {
+    gap: 7px;
+    margin-bottom: 10px;
+  }
+
+  .choices button {
+    min-height: 40px;
+    padding: 7px 5px;
+    font-size: 6.5px;
+  }
+
+  #filters .primary {
+    width: 94%;
+    margin-top: 4px;
+    padding: 14px 16px;
+  }
+
+  /* Saved Ideas gets a wider usable content column while staying clear of holes */
+  #list {
+    padding: 82px 10px 34px;
+  }
+
+  .list-sheet {
+    width: min(96vw, 520px);
+    padding-top: 74px;
+    padding-right: 42px;
+    padding-bottom: 74px;
+    padding-left: 92px;
+  }
+
+  .list-sheet h1 {
+    font-size: clamp(30px, 9vw, 40px);
+    line-height: 1.05;
+  }
+}
+
+@media (max-width: 420px) {
+  .sheet {
+    width: 96vw;
+  }
+
+  .sheet:has(#filters:not(.hidden)) {
+    height: min(78svh, 630px);
+    min-height: 560px;
+  }
+
+  .sheet-content {
+    left: 17%;
+    right: 7%;
+    top: 12%;
+    bottom: 11%;
+  }
+
+  #filters {
+    padding: 8px 5px 10px 8px;
+  }
+
+  .choices button {
+    min-height: 38px;
+    font-size: 6px;
+  }
+
+  .list-sheet {
+    width: 96vw;
+    padding-top: 68px;
+    padding-right: 34px;
+    padding-bottom: 68px;
+    padding-left: 82px;
+  }
+}
+
+/* Dice removed from the design */
+#home .dice-icon {
+  display: none !important;
+}
